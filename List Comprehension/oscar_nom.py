@@ -122,7 +122,12 @@ print("nom_count_dict = ""{}\n".format(nom_count_dict))
 
 ### 1B: Create dictionary with the count of Oscar wins for each director
 win_count_dict = {}
-# Add your code here
+for years, nom_list in winners.items():
+    for nominee in nom_list:
+        if nominee not in win_count_dict:
+            win_count_dict.update({nominee: 1})
+        elif nominee in win_count_dict:
+            win_count_dict.update({nominee: win_count_dict[nominee] + 1})
 
 
 print("win_count_dict = {}".format(win_count_dict))
