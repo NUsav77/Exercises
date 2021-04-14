@@ -10,5 +10,5 @@ scores = {
              "Beth Smith": 98
           }
 
-passed = [scores[top_score] for top_score in scores if scores[top_score] >= 65]
+passed = [top_score for top_score in scores if scores[top_score] >= 65]
 print(passed)
