@@ -80,9 +80,6 @@ import sys
 
 # Complete the minimumBribes function below.
 
-t = 1
-n = 5
-queue = [5, 1, 2, 3, 4]
 
 
 def minimumBribes(q):
@@ -90,7 +87,10 @@ def minimumBribes(q):
     moves = 0
 
     q = [P - 1 for P in q]  # Takes each number in list q and subtracts 1 to make things easier to understand
-    print(f'q is {q}')  # Prints numbers within list q
+
+    # Prints numbers within list q (for testing purposes)
+    # print(f'q is {q}')
+
     for i, P in enumerate(q):   # Creates a position i for each value of P using enumerate()
         if P - i > 2:   # Checks if any person P is more than two ahead of its original position
                         # If it is, automatically goes to "Too chaotic" and ends.
@@ -109,9 +109,6 @@ def minimumBribes(q):
     print(moves)
 
 
-minimumBribes(queue)
-
-'''
 if __name__ == '__main__':
     t = int(input('Enter number of test cases: '))
 
@@ -119,4 +116,3 @@ if __name__ == '__main__':
         n = int(input('Enter number of people in queue: '))
         q = list(map(int, input('Enter space-separated queue order (e.g. 1 4 2 3 5): ').rstrip().split()))
         minimumBribes(q)
-'''
