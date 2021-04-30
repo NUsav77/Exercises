@@ -16,4 +16,4 @@ glossary = {
     'tuple': 'An immutable list.',
 }
 
-[print(f"{key}: \n\t{value}\n") for key, value in glossary.items()]
+[print(f"{key}: \n\t{value}\n") for key, value in sorted(glossary.items())]

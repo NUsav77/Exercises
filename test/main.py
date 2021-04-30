@@ -1,9 +1,20 @@
-if __name__ == '__main__':
-    n = int(input())
-    nums = []
-    count = 0
-    for num in range(n):
-        count += 1
-        nums.append(count)
-print(nums)
+pets = {
+    'remy': {
+        'gender': 'female',
+        'species': 'dog',
+        'breed': 'husky',
+        'color': 'black/white',
+        'age': 4,
+    },
+    'martin': {
+        'gender': 'male',
+        'species': 'cat',
+        'breed': 'tuxedo',
+        'color': 'black/white',
+        'age': 1,
+    },
+}
 
+for pet, info in pets.items():
+    print(f"{pet.title()} has the following specifications:")
+    print(f"\tGender: {info['gender']}")
