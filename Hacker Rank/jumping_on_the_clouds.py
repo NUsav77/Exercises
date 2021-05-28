@@ -51,13 +51,14 @@ Explanation 1:
 The only thundercloud to avoid is c[4]. The game can be won in 3 jumps:
 """
 
-#!/bin/python3
+# !/bin/python3
 
 import math
 import os
 import random
 import re
 import sys
+
 
 #
 # Complete the 'jumpingOnClouds' function below.
@@ -70,21 +71,24 @@ def jumpingOnClouds(c):
     # Variable which counts the minimum number of jumps
     min_jumps = 0
 
-    # Variable which counts the number of double 0 jumps
-    jump_limit = 0
+    # Counter for which clouds should be skipped
+    skip = 0
 
     for count, jump in enumerate(c):
-
-        # eliminates the first jump and any clouds with 1
-        if count == 0 or jump == 1:
+        if count == 0:
             continue
-
         elif jump == 0:
+            if count == skip:
+                skip = 0
+                continue
+            if count < len(c) - 1:
+                if c[count+1] == 0 and c[count-1] == 0:
+                    skip = count+1
+                    min_jumps += 1
+                    continue
             min_jumps += 1
-            if c[count - 1] == 0 and jump_limit == 1:
-                jump_limit = 0
-                min_jumps -= 1
-            jump_limit += 1
+        elif jump == 1:
+            continue
     return min_jumps
 
 if __name__ == '__main__':
