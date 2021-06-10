@@ -7,7 +7,7 @@ for char in s:
         alnum = True
     if char.isalpha():
         alpha = True
-    if char.isdigit:
+    if char.isdigit():
         digit = True
     if char.islower():
         lower = True
